@@ -1150,7 +1150,7 @@ function openProductDetails(id){
   box.innerHTML='<h3 style="font-size:19px;margin-bottom:2px">'+esc(p.name)+'</h3>'
     +'<div class="prod-sub" style="margin-bottom:12px">ID: '+esc(p.id)+(p.sku?' · артикул '+esc(p.sku):'')+'</div>'
     +'<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px">'
-    +'<span class="role-badge" style="background:'+r+'">'+statusLabel(st)+'</span>'
+    +'<span class="role-badge" style="background:'+r+';color:#fff">'+statusLabel(st)+'</span>'
     +(p.cat?'<span class="role-badge" style="background:var(--line)">'+esc(p.cat)+'</span>':'')
     +'<span class="role-badge" style="background:var(--line)">'+esc(p.unit||'шт')+'</span></div>'
     +'<table class="mini" style="width:100%">'
@@ -1322,7 +1322,7 @@ function renderUsers(){
     return `<tr>
       <td><div class="prod-name">${esc(u.name)}</div>${u.id===state.session?'<div class="prod-sub">это вы</div>':''}</td>
       <td>${esc(u.login)}</td>
-      <td><span class="role-badge" style="background:${r.color}">${r.label}</span></td>
+      <td><span class="role-badge" style="background:${r.color};color:#fff">${r.label}</span></td>
       <td style="text-align:right"><span style="display:inline-flex;align-items:center;gap:7px;flex-wrap:wrap;justify-content:flex-end"><select class="filter" style="padding:7px 30px 7px 9px" onchange="setRole('${u.id}',this.value)">
           ${Object.entries(ROLES).map(([k,v])=>`<option value="${k}" ${k===u.role?'selected':''}>${v.label}</option>`).join('')}
         </select>
